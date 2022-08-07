@@ -6,6 +6,7 @@ const morgan = require("morgan");
 
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
+const postsRouter = require("./routes/posts");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(morgan("common"));
 
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postsRouter);
 
 app.listen(3001, () => {
   console.log("Backend server is running on port 3001");
